@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Currency converter demo</title>
+    <link href="../dist/currency-converter.css" rel="stylesheet"/>
+
+    <link href="style.css" rel="stylesheet"/>
+    <link href="https://prismjs.com/themes/prism-coy.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="meta">
+    <h1>Currency converter</h1>
+</div>
+<section>
+    <div class="section-container">
+        <div class="meta-area">
+            <h2 class="section-title">
+                Example: 1
+                <code class="blue">Default options</code>
+            </h2>
+        </div>
+        <div class="ex-section ex1">
+            <div class="code-area">
+            <pre
+                    class="code-container"
+            ><code class="language-javascript">currencyConverter("#example-1");</code></pre>
+            </div>
+            <div class="ex-area">
+                <div class="ex-container">
+                    <div id="example-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-container">
+        <div class="meta-area">
+            <h2 class="section-title">
+                Example: 2
+                <code class="blue">Custom currency data</code>
+            </h2>
+        </div>
+        <div class="ex-section ex1">
+            <div class="code-area">
+            <pre
+                    class="code-container"
+            ><code class="language-javascript">currencyConverter("#example-2", {
+  currencyData: {
+    AUD: 1.6376,
+    BGN: 1.9558,
+    BRL: 6.0777,
+    EUR: 1
+  },
+  toCurrency: "BGN"
+});</code></pre>
+            </div>
+            <div class="ex-area">
+                <div class="ex-container">
+                    <div id="example-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-container">
+        <div class="meta-area">
+            <h2 class="section-title">
+                Example: 3
+                <code class="blue">Without bottom currency text</code>
+            </h2>
+        </div>
+        <div class="ex-section ex1">
+            <div class="code-area">
+            <pre
+                    class="code-container"
+            ><code class="language-javascript">currencyConverter("#example-3", {
+  withText: false
+});</code></pre>
+            </div>
+            <div class="ex-area">
+                <div class="ex-container">
+                    <div id="example-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="section-container">
+        <div class="meta-area">
+            <h2 class="section-title">
+                Example: 4
+                <code class="blue">More custom options</code>
+            </h2>
+        </div>
+        <div class="ex-section ex1">
+            <div class="code-area">
+            <pre
+                    class="code-container"
+            ><code class="language-javascript">const elm = document.getElementById( 'example-4' );
+const cc = currencyConverter(elm, {
+    baseAmount: 10,
+    fromCurrency: "INR",
+    toCurrency: "JPY",
+    precision: 2,
+    locale: {
+        From: "Von",
+        To: "Zu",
+        INR: "Indian Rupee",
+        JPY: "Japanese Yen"
+    }
+});
+
+
+// Bind the events
+elm.addEventListener( 'onReady', function ( event ) {
+    // Set amount
+    cc.setAmount( 500 );
+} );
+
+elm.addEventListener( 'onChange', function ( event ) {
+    console.log( event.data );
+} );</code></pre>
+            </div>
+            <div class="ex-area">
+                <div class="ex-container">
+                    <div id="example-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://prismjs.com/prism.js"></script>
+<script src="../dist/currency-converter.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+:root {
+    --blue: hsl(187, 61%, 79%);
+    --blue--b: hsl(187, 54%, 68%);
+    --light-gray-blue: hsl(182, 29%, 96%);
+
+    --pageMax: 1260px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+}
+
+h2 {
+    margin: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+style,
+code {
+    font-family: "Inconsolata", monospace;
+}
+
+pre,
+code {
+    white-space: normal;
+}
+
+.blue {
+    background-color: var(--blue);
+    border: 1px solid var(--blue--b);
+}
+
+.meta h1 {
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+.meta p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.meta a {
+    color: hsl(207, 90%, 54%);
+}
+
+section:nth-child(2n) {
+    background-color: var(--light-gray-blue);
+}
+
+section:nth-child(2n) .code-container {
+    background-color: white;
+}
+
+.section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section-title code {
+    display: block;
+    width: auto;
+    font-size: 0.8em;
+    margin-left: 2em;
+}
+
+.ex-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 2rem;
+}
+
+.ex-container {
+    resize: both;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 0 0 20px -10px hsl(187, 97%, 24%);
+    display: grid;
+    align-items: center;
+    background: white;
+}
+
+.meta {
+    text-align: center;
+    padding: 4rem;
+    margin: 0 auto;
+}
+
+.code-container {
+    white-space: pre-wrap;
+    overflow: auto !important;
+    background-color: var(--light-gray-blue);
+    padding: 1rem;
+    border: 1px solid var(--blue);
+    margin: -1px 0 1rem 0 !important;
+    font-size: 1.35rem;
+}
+
+.section-container {
+    max-width: var(--pageMax);
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.meta-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/*  For Demos */
+
+@media screen and (min-width: 811px) {
+    .section-container {
+        padding: 8rem 4rem;
+    }
+
+    .meta {
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 811px) {
+    .ex-section {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .section-title code {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    .code-container {
+        font-size: 1.15rem;
+    }
+}
